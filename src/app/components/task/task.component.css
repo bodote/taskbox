@@ -1,0 +1,12 @@
+.checkbox {
+  display: inline-block;
+  height: 3rem;
+  position: relative;
+  vertical-align: middle;
+  width: 44px;
+  background-color: blueviolet;
+}
+.checkbox input[type="checkbox"] {
+  font-size: 1em;
+  visibility: hidden;
+}

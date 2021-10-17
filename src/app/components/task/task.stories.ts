@@ -15,19 +15,19 @@ export default {
     }),
   ],
   excludeStories: /.*Data$/,
-  title: 'Task',
+  title: 'myBodo-Task',
 } as Meta;
 
 export const actionsData = {
-  onPinTask: action('onPinTask'),
-  onArchiveTask: action('onArchiveTask'),
+  onPinTaskMockAction: action('onPinTaskMockEvent'),
+  onArchiveTaskMockAction: action('onArchiveTaskMockEvent'),
 };
 
 const Template: Story<TaskComponent> = (args) => ({
   props: {
     ...args,
-    onPinTask: actionsData.onPinTask,
-    onArchiveTask: actionsData.onArchiveTask,
+    onPinTaskC: actionsData.onPinTaskMockAction,
+    onArchiveTaskC: actionsData.onArchiveTaskMockAction,
   },
 });
 
