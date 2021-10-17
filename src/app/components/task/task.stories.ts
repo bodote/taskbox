@@ -15,7 +15,7 @@ export default {
     }),
   ],
   excludeStories: /.*Data$/,
-  title: 'myBodo-Task',
+  title: 'Task',
 } as Meta;
 
 export const actionsData = {

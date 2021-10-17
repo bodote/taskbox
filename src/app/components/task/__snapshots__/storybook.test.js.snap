@@ -1,5 +1,133 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Task Archived 1`] = `
+<storybook-wrapper>
+  <app-task
+    ng-reflect-task="[object Object]"
+  >
+    <div
+      class="list-item TASK_ARCHIVED"
+    >
+      <label
+        class="checkbox"
+      >
+        <input
+          checked=""
+          disabled="true"
+          name="checked"
+          type="checkbox"
+        />
+        <span
+          class="checkbox-custom"
+        />
+      </label>
+      <div
+        class="title"
+      >
+        <input
+          placeholder="Input title"
+          readonly="true"
+          type="text"
+        />
+      </div>
+      <div
+        class="actions"
+      >
+        
+      </div>
+    </div>
+  </app-task>
+</storybook-wrapper>
+`;
+
+exports[`Storyshots Task Default 1`] = `
+<storybook-wrapper>
+  <app-task
+    ng-reflect-task="[object Object]"
+  >
+    <div
+      class="list-item TASK_INBOX"
+    >
+      <label
+        class="checkbox"
+      >
+        <input
+          disabled="true"
+          name="checked"
+          type="checkbox"
+        />
+        <span
+          class="checkbox-custom"
+        />
+      </label>
+      <div
+        class="title"
+      >
+        <input
+          placeholder="Input title"
+          readonly="true"
+          type="text"
+        />
+      </div>
+      <div
+        class="actions"
+      >
+        
+        <a>
+          <span
+            class="icon-star"
+          />
+        </a>
+      </div>
+    </div>
+  </app-task>
+</storybook-wrapper>
+`;
+
+exports[`Storyshots Task Pinned 1`] = `
+<storybook-wrapper>
+  <app-task
+    ng-reflect-task="[object Object]"
+  >
+    <div
+      class="list-item TASK_PINNED"
+    >
+      <label
+        class="checkbox"
+      >
+        <input
+          disabled="true"
+          name="checked"
+          type="checkbox"
+        />
+        <span
+          class="checkbox-custom"
+        />
+      </label>
+      <div
+        class="title"
+      >
+        <input
+          placeholder="Input title"
+          readonly="true"
+          type="text"
+        />
+      </div>
+      <div
+        class="actions"
+      >
+        
+        <a>
+          <span
+            class="icon-star"
+          />
+        </a>
+      </div>
+    </div>
+  </app-task>
+</storybook-wrapper>
+`;
+
 exports[`Storyshots TaskList Default 1`] = `
 <storybook-wrapper>
   <div
@@ -687,133 +815,5 @@ exports[`Storyshots TaskList With Pinned Tasks 1`] = `
       </div>
     </app-task-list>
   </div>
-</storybook-wrapper>
-`;
-
-exports[`Storyshots myBodo-Task Archived 1`] = `
-<storybook-wrapper>
-  <app-task
-    ng-reflect-task="[object Object]"
-  >
-    <div
-      class="list-item TASK_ARCHIVED"
-    >
-      <label
-        class="checkbox"
-      >
-        <input
-          checked=""
-          disabled="true"
-          name="checked"
-          type="checkbox"
-        />
-        <span
-          class="checkbox-custom"
-        />
-      </label>
-      <div
-        class="title"
-      >
-        <input
-          placeholder="Input title"
-          readonly="true"
-          type="text"
-        />
-      </div>
-      <div
-        class="actions"
-      >
-        
-      </div>
-    </div>
-  </app-task>
-</storybook-wrapper>
-`;
-
-exports[`Storyshots myBodo-Task Default 1`] = `
-<storybook-wrapper>
-  <app-task
-    ng-reflect-task="[object Object]"
-  >
-    <div
-      class="list-item TASK_INBOX"
-    >
-      <label
-        class="checkbox"
-      >
-        <input
-          disabled="true"
-          name="checked"
-          type="checkbox"
-        />
-        <span
-          class="checkbox-custom"
-        />
-      </label>
-      <div
-        class="title"
-      >
-        <input
-          placeholder="Input title"
-          readonly="true"
-          type="text"
-        />
-      </div>
-      <div
-        class="actions"
-      >
-        
-        <a>
-          <span
-            class="icon-star"
-          />
-        </a>
-      </div>
-    </div>
-  </app-task>
-</storybook-wrapper>
-`;
-
-exports[`Storyshots myBodo-Task Pinned 1`] = `
-<storybook-wrapper>
-  <app-task
-    ng-reflect-task="[object Object]"
-  >
-    <div
-      class="list-item TASK_PINNED"
-    >
-      <label
-        class="checkbox"
-      >
-        <input
-          disabled="true"
-          name="checked"
-          type="checkbox"
-        />
-        <span
-          class="checkbox-custom"
-        />
-      </label>
-      <div
-        class="title"
-      >
-        <input
-          placeholder="Input title"
-          readonly="true"
-          type="text"
-        />
-      </div>
-      <div
-        class="actions"
-      >
-        
-        <a>
-          <span
-            class="icon-star"
-          />
-        </a>
-      </div>
-    </div>
-  </app-task>
 </storybook-wrapper>
 `;
