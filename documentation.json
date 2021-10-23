@@ -637,7 +637,7 @@
                     }
                 }
             },
-            "templateData": "<div class=\"list-items\">\n  <div *ngIf=\"loading\">\n    <div *ngFor=\"let i of [1, 2, 3, 4, 5, 6]\" class=\"loading-item\">\n      <span class=\"glow-checkbox\"></span>\n      <span class=\"glow-text\">\n        <span>Loading</span> <span>cool</span> <span>state</span>\n      </span>\n    </div>\n  </div>\n\n  <app-task\n    *ngFor=\"let task of tasksInOrder\"\n    [task]=\"task\"\n    (onArchiveTaskC)=\"onArchiveTaskP.emit($event)\"\n    (onPinTaskC)=\"onPinTaskP.emit($event)\"\n  >\n  </app-task>\n  <div *ngIf=\"tasksInOrder.length === 0 && !loading\" class=\"wrapper-message\">\n    <span class=\"icon-check\"></span>\n    <div class=\"title-message\">You have no tasks</div>\n    <div class=\"subtitle-message\">Sit back and relax</div>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"list-items\">\n  <div *ngIf=\"loading\">\n    <div *ngFor=\"let i of [1, 2, 3, 4, 5, 6]\" class=\"loading-item\">\n      <span class=\"glow-checkbox\"></span>\n      <span class=\"glow-text\">\n        <span>Loading</span> <span>cool</span> <span>state</span>\n      </span>\n    </div>\n  </div>\n\n  <app-task\n    *ngFor=\"let task of tasksInOrder\"\n    [task]=\"task\"\n    (onArchiveTaskC)=\"onArchiveTaskP.emit($event)\"\n    (onPinTaskC)=\"onPinTaskP.emit($event)\"\n  >\n  </app-task>\n  <div *ngIf=\"tasksInOrder?.length === 0 && !loading\" class=\"wrapper-message\">\n    <span class=\"icon-check\"></span>\n    <div class=\"title-message\">You have no tasks</div>\n    <div class=\"subtitle-message\">Sit back and relax</div>\n  </div>\n</div>\n"
         },
         {
             "name": "TaskComponent",
@@ -745,7 +745,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".checkbox {\n  display: inline-block;\n  height: 3rem;\n  position: relative;\n  vertical-align: middle;\n  width: 44px;\n}\n.checkbox input[type=\"checkbox\"] {\n  font-size: 1em;\n  visibility: hidden;\n}\n",
+                    "data": "\n",
                     "styleUrl": "./task.component.css"
                 }
             ],
@@ -982,7 +982,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/task/task.stories.ts",
+                "file": "src/app/components/task-list/pure-task-list.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -990,7 +990,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/task-list/pure-task-list.stories.ts",
+                "file": "src/app/components/task/task.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1046,7 +1046,7 @@
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
+                "file": "src/stories/Page.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1054,14 +1054,6 @@
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/Header.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
@@ -1071,6 +1063,14 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Page.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1126,14 +1126,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/Page.stories.ts",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
@@ -1142,9 +1134,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/task/task.stories.ts",
-                "type": "Story<TaskComponent>",
-                "defaultValue": "(args) => ({\n  props: {\n    ...args,\n    onPinTaskC: actionsData.onPinTaskMockAction,\n    onArchiveTaskC: actionsData.onArchiveTaskMockAction,\n  },\n})"
+                "file": "src/stories/Header.stories.ts",
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1153,6 +1145,14 @@
                 "file": "src/app/components/task-list/pure-task-list.stories.ts",
                 "type": "Story<PureTaskListComponent>",
                 "defaultValue": "(args) => ({\n  props: {\n    ...args,\n    onPinTaskP: TaskStories.actionsData.onPinTaskMockAction,\n    onArchiveTaskP: TaskStories.actionsData.onArchiveTaskMockAction,\n  },\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/task/task.stories.ts",
+                "type": "Story<TaskComponent>",
+                "defaultValue": "(args) => ({\n  props: {\n    ...args,\n    onPinTaskC: actionsData.onPinTaskMockAction,\n    onArchiveTaskC: actionsData.onArchiveTaskMockAction,\n  },\n})"
             },
             {
                 "name": "WithPinnedTasks",
@@ -1331,32 +1331,6 @@
                     "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
                 }
             ],
-            "src/stories/Header.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "type": "Story<Header>",
-                    "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
-                }
-            ],
             "src/stories/Page.stories.ts": [
                 {
                     "name": "LoggedIn",
@@ -1381,6 +1355,32 @@
                     "file": "src/stories/Page.stories.ts",
                     "type": "Story<Page>",
                     "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
+                }
+            ],
+            "src/stories/Header.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "type": "Story<Header>",
+                    "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
                 }
             ],
             "src/jest-config/__mocks__/globalMocks.ts": [

@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
   template: `
     <app-pure-task-list
       [tasks]="tasks$ | async"
-      (onArchiveTask)="archiveTask($event)"
-      (onPinTask)="pinTask($event)"
+      (onArchiveTaskP)="archiveTask($event)"
+      (onPinTaskP)="pinTask($event)"
     ></app-pure-task-list>
   `,
 })

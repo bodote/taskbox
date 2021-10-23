@@ -54,9 +54,14 @@ export class TasksState {
   ) {
     const state = getState().entities;
 
+    let newState = 'TASK_PINNED';
+    if (state[payload].state === newState) {
+      newState = 'TASK_INBOX';
+    }
+
     const entities = {
       ...state,
-      [payload]: { ...state[payload], state: 'TASK_PINNED' },
+      [payload]: { ...state[payload], state: newState },
     };
 
     patchState({
@@ -70,10 +75,13 @@ export class TasksState {
     { payload }: ArchiveTask
   ) {
     const state = getState().entities;
-
+    let newState = 'TASK_ARCHIVED';
+    if (state[payload].state === newState) {
+      newState = 'TASK_INBOX';
+    }
     const entities = {
       ...state,
-      [payload]: { ...state[payload], state: 'TASK_ARCHIVED' },
+      [payload]: { ...state[payload], state: newState },
     };
 
     patchState({

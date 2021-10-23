@@ -11,17 +11,17 @@ export class TaskComponent {
 
   // tslint:disable-next-line: no-output-on-prefix
   @Output()
-  onPinTaskC = new EventEmitter<Event>();
+  onPinTaskC = new EventEmitter<string>();
 
   // tslint:disable-next-line: no-output-on-prefix
   @Output()
-  onArchiveTaskC = new EventEmitter<Event>();
+  onArchiveTaskC = new EventEmitter<string>();
 
   /**
    * Component method to trigger the onPin event
    * @param id string
    */
-  onPin(id: any) {
+  onPin(id: string) {
     // called with task.id when click on star icon exept when already archived
     this.onPinTaskC.emit(id);
   }
@@ -29,7 +29,7 @@ export class TaskComponent {
    * Component method to trigger the onArchive event
    * @param id string
    */
-  onArchive(taskId: any) {
+  onArchive(taskId: string) {
     this.onArchiveTaskC.emit(taskId);
   }
 }

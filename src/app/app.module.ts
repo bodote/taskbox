@@ -7,12 +7,13 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 
 import { AppComponent } from './app.component';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     TaskModule,
-    NgxsModule.forRoot([]),
+    NgxsModule.forRoot([], { developmentMode: !environment.production }),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot(),
   ],
