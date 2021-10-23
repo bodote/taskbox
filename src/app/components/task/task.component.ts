@@ -29,7 +29,7 @@ export class TaskComponent {
    * Component method to trigger the onArchive event
    * @param id string
    */
-  onArchive(id: any) {
-    this.onArchiveTaskC.emit(id);
+  onArchive(taskId: any) {
+    this.onArchiveTaskC.emit(taskId);
   }
 }
