@@ -342,7 +342,7 @@ input:-webkit-autofill {
 }
 .checkbox input[type="checkbox"] {
   font-size: 1em;
-  visibility: visible;
+  visibility: hidden;
 }
 .checkbox input[type="checkbox"] + span:before {
   position: absolute;

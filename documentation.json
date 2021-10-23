@@ -5,15 +5,11 @@
             "name": "Task",
             "id": "interface-Task-ccb132c6b7036af26ef3c708aa49b084",
             "file": "src/app/models/task.model.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
             "type": "interface",
             "sourceCode": "export interface Task {\n  id: string;\n  title: string;\n  state: string;\n}\n",
             "properties": [
                 {
                     "name": "id",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "string",
                     "optional": false,
                     "description": "",
@@ -21,8 +17,6 @@
                 },
                 {
                     "name": "state",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "string",
                     "optional": false,
                     "description": "",
@@ -30,8 +24,6 @@
                 },
                 {
                     "name": "title",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "string",
                     "optional": false,
                     "description": "",
@@ -39,13 +31,11 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 164,
+            "kind": 150,
             "methods": []
         }
     ],
     "injectables": [],
-    "guards": [],
-    "interceptors": [],
     "classes": [],
     "directives": [],
     "components": [
@@ -73,8 +63,6 @@
                 {
                     "name": "title",
                     "defaultValue": "'intro-storybook-angular-template'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "string",
                     "optional": false,
                     "description": "",
@@ -82,12 +70,10 @@
                 }
             ],
             "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
-            "rawdescription": "\n",
+            "rawdescription": "",
             "type": "component",
             "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css']\n})\nexport class AppComponent {\n  title = 'intro-storybook-angular-template';\n}\n",
             "assetsDirs": [],
@@ -120,9 +106,6 @@
             "inputsClass": [
                 {
                     "name": "backgroundColor",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "What background color to use",
                     "description": "<p>What background color to use</p>\n",
                     "line": 26,
                     "type": "string"
@@ -130,49 +113,18 @@
                 {
                     "name": "label",
                     "defaultValue": "'Button'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 711,
-                            "end": 724,
-                            "flags": 4227072,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 322,
-                            "tagName": {
-                                "pos": 712,
-                                "end": 720,
-                                "flags": 4227072,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 79,
-                                "escapedText": "required"
-                            },
-                            "comment": ""
-                        }
-                    ],
-                    "rawdescription": "Button contents",
                     "description": "<p>Button contents</p>\n",
-                    "line": 40,
-                    "type": "string"
+                    "line": 40
                 },
                 {
                     "name": "primary",
                     "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "Is this the principal call to action on the page?",
                     "description": "<p>Is this the principal call to action on the page?</p>\n",
-                    "line": 20,
-                    "type": "boolean"
+                    "line": 20
                 },
                 {
                     "name": "size",
                     "defaultValue": "'medium'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "How large should the button be?",
                     "description": "<p>How large should the button be?</p>\n",
                     "line": 32,
                     "type": "\"small\" | \"medium\" | \"large\""
@@ -182,9 +134,6 @@
                 {
                     "name": "onClick",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nOptional click handler\n",
                     "description": "<p>Optional click handler</p>\n",
                     "line": 46,
                     "type": "EventEmitter"
@@ -192,12 +141,10 @@
             ],
             "propertiesClass": [],
             "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
-            "rawdescription": "\n",
+            "rawdescription": "",
             "type": "component",
             "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
             "assetsDirs": [],
@@ -241,46 +188,36 @@
                 {
                     "name": "user",
                     "defaultValue": "null",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "line": 53,
-                    "type": ""
+                    "type": "unknown"
                 }
             ],
             "outputsClass": [
                 {
                     "name": "onCreateAccount",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "line": 62,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onLogin",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "line": 56,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onLogout",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "line": 59,
                     "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [],
             "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
-            "rawdescription": "\n",
+            "rawdescription": "",
             "type": "component",
             "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          primary\n          size=\"small\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: unknown = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
             "assetsDirs": [],
@@ -313,46 +250,36 @@
                 {
                     "name": "user",
                     "defaultValue": "null",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "line": 66,
-                    "type": ""
+                    "type": "unknown"
                 }
             ],
             "outputsClass": [
                 {
                     "name": "onCreateAccount",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "line": 75,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onLogin",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "line": 69,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onLogout",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "line": 72,
                     "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [],
             "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
-            "rawdescription": "\n",
+            "rawdescription": "",
             "type": "component",
             "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"onLogout.emit($event)\"\n      (onLogin)=\"onLogin.emit($event)\"\n      (onCreateAccount)=\"onCreateAccount.emit($event)\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://www.learnstorybook.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Learn Storybook\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\">\n          docs\n        </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  @Input()\n  user: unknown = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n\n// export const Page = ({ user, onLogin, onLogout, onCreateAccount }) => (\n//   <article>\n//     <Header user={user} onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount} />\n\n// );\n// Page.propTypes = {\n//   user: PropTypes.shape({}),\n//   onLogin: PropTypes.func.isRequired,\n//   onLogout: PropTypes.func.isRequired,\n//   onCreateAccount: PropTypes.func.isRequired,\n// };\n\n// Page.defaultProps = {\n//   user: null,\n// };\n",
             "assetsDirs": [],
@@ -366,7 +293,7 @@
         },
         {
             "name": "TaskComponent",
-            "id": "component-TaskComponent-b0cbd25231d4c97ec865303db02e5c42",
+            "id": "component-TaskComponent-fa1895b167ec76c5c19a50e5c9fa832a",
             "file": "src/app/components/task/task.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -374,7 +301,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-task",
-            "styleUrls": [],
+            "styleUrls": [
+                "./task.component.css"
+            ],
             "styles": [],
             "templateUrl": [
                 "./task.component.html"
@@ -383,27 +312,21 @@
             "inputsClass": [
                 {
                     "name": "task",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 9,
+                    "line": 10,
                     "type": "Task"
                 }
             ],
             "outputsClass": [
                 {
-                    "name": "onArchiveTask",
+                    "name": "onArchiveTaskC",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "EventEmitter"
                 },
                 {
-                    "name": "onPinTask",
+                    "name": "onPinTaskC",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "EventEmitter"
                 }
             ],
@@ -414,40 +337,27 @@
                     "args": [
                         {
                             "name": "id",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
+                            "type": "any"
                         }
                     ],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 31,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nComponent method to trigger the onArchive event\n",
+                    "line": 32,
                     "description": "<p>Component method to trigger the onArchive event</p>\n",
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 781,
-                                "end": 783,
-                                "flags": 4227072,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 79,
+                                "pos": 825,
+                                "end": 827,
+                                "flags": 0,
                                 "escapedText": "id"
                             },
                             "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
                             "tagName": {
-                                "pos": 775,
-                                "end": 780,
-                                "flags": 4227072,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 79,
+                                "pos": 819,
+                                "end": 824,
+                                "flags": 0,
                                 "escapedText": "param"
                             },
                             "comment": "<p>string</p>\n"
@@ -459,40 +369,27 @@
                     "args": [
                         {
                             "name": "id",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
+                            "type": "any"
                         }
                     ],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 23,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nComponent method to trigger the onPin event\n",
+                    "line": 24,
                     "description": "<p>Component method to trigger the onPin event</p>\n",
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 564,
-                                "end": 566,
-                                "flags": 4227072,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 79,
+                                "pos": 606,
+                                "end": 608,
+                                "flags": 0,
                                 "escapedText": "id"
                             },
                             "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
                             "tagName": {
-                                "pos": 558,
-                                "end": 563,
-                                "flags": 4227072,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 79,
+                                "pos": 600,
+                                "end": 605,
+                                "flags": 0,
                                 "escapedText": "param"
                             },
                             "comment": "<p>string</p>\n"
@@ -500,22 +397,25 @@
                     ]
                 }
             ],
-            "deprecated": false,
-            "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
-            "rawdescription": "\n",
+            "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { Task } from '../../models/task.model';\n\n@Component({\n  selector: 'app-task',\n  templateUrl: './task.component.html',\n})\nexport class TaskComponent {\n  @Input() task: Task; //consists of id,title,state\n\n  // tslint:disable-next-line: no-output-on-prefix\n  @Output()\n  onPinTask = new EventEmitter<Event>();\n\n  // tslint:disable-next-line: no-output-on-prefix\n  @Output()\n  onArchiveTask = new EventEmitter<Event>();\n\n  /**\n   * Component method to trigger the onPin event\n   * @param id string\n   */\n  onPin(id: any) {\n    //called with task.id when click on star icon exept when already archived\n    this.onPinTask.emit(id);\n  }\n  /**\n   * Component method to trigger the onArchive event\n   * @param id string\n   */\n  onArchive(id: any) {\n    this.onArchiveTask.emit(id);\n  }\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { Task } from '../../models/task.model';\n\n@Component({\n  selector: 'app-task',\n  templateUrl: './task.component.html',\n  styleUrls: ['./task.component.css'],\n})\nexport class TaskComponent {\n  @Input() task: Task; // consists of id,title,state\n\n  // tslint:disable-next-line: no-output-on-prefix\n  @Output()\n  onPinTaskC = new EventEmitter<Event>();\n\n  // tslint:disable-next-line: no-output-on-prefix\n  @Output()\n  onArchiveTaskC = new EventEmitter<Event>();\n\n  /**\n   * Component method to trigger the onPin event\n   * @param id string\n   */\n  onPin(id: any) {\n    // called with task.id when click on star icon exept when already archived\n    this.onPinTaskC.emit(id);\n  }\n  /**\n   * Component method to trigger the onArchive event\n   * @param id string\n   */\n  onArchive(id: any) {\n    this.onArchiveTaskC.emit(id);\n  }\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": ".checkbox {\n  display: inline-block;\n  height: 3rem;\n  position: relative;\n  vertical-align: middle;\n  width: 44px;\n  background-color: blueviolet;\n}\n.checkbox input[type=\"checkbox\"] {\n  font-size: 1em;\n  visibility: hidden;\n}\n",
+                    "styleUrl": "./task.component.css"
+                }
+            ],
             "stylesData": "",
             "templateData": "<div class=\"list-item {{ task?.state }}\">\n  <label class=\"checkbox\">\n    <input\n      type=\"checkbox\"\n      [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\n      disabled=\"true\"\n      name=\"checked\"\n    />\n    <span class=\"checkbox-custom\" (click)=\"onArchive(task.id)\"></span>\n  </label>\n  <div class=\"title\">\n    <input\n      type=\"text\"\n      [value]=\"task?.title\"\n      readonly=\"true\"\n      placeholder=\"Input title\"\n    />\n  </div>\n  <div class=\"actions\">\n    <a *ngIf=\"task?.state !== 'TASK_ARCHIVED'\" (click)=\"onPin(task.id)\">\n      <span class=\"icon-star\"></span>\n    </a>\n  </div>\n</div>\n"
         },
         {
             "name": "TaskListComponent",
-            "id": "component-TaskListComponent-08f779855eab39d291b5afd15481cc8a",
+            "id": "component-TaskListComponent-8cf21763607989a510b18a0bbf153f12",
             "file": "src/app/components/task-list/task-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -535,56 +435,47 @@
                 {
                     "name": "loading",
                     "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "Checks if it's in loading state",
-                    "description": "<p>Checks if it&#39;s in loading state</p>\n",
-                    "line": 14,
-                    "type": "boolean"
+                    "description": "<p>Checks if it&#39;s in loading state </p>\n",
+                    "line": 21
                 },
                 {
                     "name": "tasks",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "The list of tasks",
-                    "description": "<p>The list of tasks</p>\n",
-                    "line": 11,
-                    "type": "Task[]"
+                    "line": 13,
+                    "type": "[]"
                 }
             ],
             "outputsClass": [
                 {
-                    "name": "onArchiveTask",
+                    "name": "onArchiveTaskP",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\nEvent to change the task to archived",
-                    "description": "<p>Event to change the task to archived</p>\n",
-                    "line": 24,
+                    "description": "<p>Event to change the task to archived </p>\n",
+                    "line": 31,
                     "type": "EventEmitter"
                 },
                 {
-                    "name": "onPinTask",
+                    "name": "onPinTaskP",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\nEvent to change the task to pinned",
-                    "description": "<p>Event to change the task to pinned</p>\n",
-                    "line": 19,
+                    "description": "<p>Event to change the task to pinned </p>\n",
+                    "line": 26,
                     "type": "EventEmitter"
                 }
             ],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "tasksInOrder",
+                    "type": "Task[]",
+                    "optional": false,
+                    "description": "<p>The list of tasks </p>\n",
+                    "line": 11
+                }
+            ],
             "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
-            "rawdescription": "\n",
+            "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { Task } from '../../models/task.model';\n\n@Component({\n  selector: 'app-task-list',\n  templateUrl: './task-list.component.html',\n  styleUrls: ['./task-list.component.css'],\n})\nexport class TaskListComponent {\n  /** The list of tasks */\n  @Input() tasks: Task[] = [];\n\n  /** Checks if it's in loading state */\n  @Input() loading = false;\n\n  /** Event to change the task to pinned */\n  // tslint:disable-next-line: no-output-on-prefix\n  @Output()\n  onPinTask = new EventEmitter<Event>();\n\n  /** Event to change the task to archived */\n  // tslint:disable-next-line: no-output-on-prefix\n  @Output()\n  onArchiveTask = new EventEmitter<Event>();\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { Task } from '../../models/task.model';\n\n@Component({\n  selector: 'app-task-list',\n  templateUrl: './task-list.component.html',\n  styleUrls: ['./task-list.component.css'],\n})\nexport class TaskListComponent {\n  /** The list of tasks */\n  tasksInOrder: Task[];\n  @Input()\n  set tasks(arr: Task[]) {\n    this.tasksInOrder = [\n      ...arr.filter((t) => t.state === 'TASK_PINNED'),\n      ...arr.filter((t) => t.state !== 'TASK_PINNED'),\n    ];\n  }\n\n  /** Checks if it's in loading state */\n  @Input() loading = false;\n\n  /** Event to change the task to pinned */\n  // tslint:disable-next-line: no-output-on-prefix\n  @Output()\n  onPinTaskP = new EventEmitter<Event>();\n\n  /** Event to change the task to archived */\n  // tslint:disable-next-line: no-output-on-prefix\n  @Output()\n  onArchiveTaskP = new EventEmitter<Event>();\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -593,19 +484,38 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"list-items\">\n  <div *ngIf=\"loading\">loading</div>\n  <div *ngIf=\"!loading && tasks.length === 0\">empty</div>\n  <app-task\n    *ngFor=\"let task of tasks\"\n    [task]=\"task\"\n    (onArchiveTask)=\"onArchiveTask.emit($event)\"\n    (onPinTask)=\"onPinTask.emit($event)\"\n  >\n  </app-task>\n</div>\n"
+            "accessors": {
+                "tasks": {
+                    "name": "tasks",
+                    "setSignature": {
+                        "name": "tasks",
+                        "type": "void",
+                        "args": [
+                            {
+                                "name": "arr",
+                                "type": "[]"
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 13,
+                        "jsdoctags": [
+                            {
+                                "name": "arr",
+                                "type": "[]",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "templateData": "<div class=\"list-items\">\n  <div *ngIf=\"loading\">\n    <div *ngFor=\"let i of [1, 2, 3, 4, 5, 6]\" class=\"loading-item\">\n      <span class=\"glow-checkbox\"></span>\n      <span class=\"glow-text\">\n        <span>Loading</span> <span>cool</span> <span>state</span>\n      </span>\n    </div>\n  </div>\n\n  <app-task\n    *ngFor=\"let task of tasksInOrder\"\n    [task]=\"task\"\n    (onArchiveTaskC)=\"onArchiveTaskP.emit($event)\"\n    (onPinTaskC)=\"onPinTaskP.emit($event)\"\n  >\n  </app-task>\n  <div *ngIf=\"tasksInOrder.length === 0 && !loading\" class=\"wrapper-message\">\n    <span class=\"icon-check\"></span>\n    <div class=\"title-message\">You have no tasks</div>\n    <div class=\"subtitle-message\">Sit back and relax</div>\n  </div>\n</div>\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-ddad3172ddde78926a29b9dd86d4bdbd",
-            "description": "",
-            "deprecationMessage": "",
-            "deprecated": false,
-            "file": "src/app/app.module.ts",
-            "methods": [],
-            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\nimport { NgModule } from '@angular/core';\n\nimport { AppComponent } from './app.component';\nimport { TaskComponent } from './components/task/task.component';\nimport { TaskListComponent } from './components/task-list/task-list.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    TaskComponent,\n    TaskListComponent\n  ],\n  imports: [\n    BrowserModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -655,18 +565,14 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/task/task.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\n  onPinTask: action('onPinTask'),\n  onArchiveTask: action('onArchiveTask'),\n}"
+                "defaultValue": "{\n  onPinTaskMockAction: action('onPinTaskMockEvent'),\n  onArchiveTaskMockAction: action('onArchiveTaskMockEvent'),\n}"
             },
             {
                 "name": "Archived",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/task/task.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -675,8 +581,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/task-list/task-list.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -685,8 +589,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/task/task.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -695,8 +597,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/task-list/task-list.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -704,29 +604,23 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\n  production: false\n}"
             },
             {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -735,8 +629,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/task-list/task-list.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -745,8 +637,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -755,8 +645,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -765,8 +653,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -775,8 +661,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -785,8 +669,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/jest-config/__mocks__/globalMocks.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "() => {\n    let storage = {};\n    return {\n      getItem: key => (key in storage ? storage[key] : null),\n      setItem: (key, value) => (storage[key] = value || ''),\n      removeItem: key => delete storage[key],\n      clear: () => (storage = {}),\n    };\n  }"
             },
@@ -795,8 +677,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/task/task.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -805,8 +685,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -815,8 +693,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -825,8 +701,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -835,8 +709,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "Story<Button>",
                 "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
             },
@@ -845,8 +717,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "Story<Header>",
                 "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
             },
@@ -855,8 +725,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
             },
@@ -865,28 +733,22 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/task-list/task-list.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "Story<TaskListComponent>",
-                "defaultValue": "(args) => ({\n  props: {\n    ...args,\n    onPinTask: TaskStories.actionsData.onPinTask,\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\n  },\n})"
+                "defaultValue": "(args) => ({\n  props: {\n    ...args,\n    onPinTaskP: TaskStories.actionsData.onPinTaskMockAction,\n    onArchiveTaskP: TaskStories.actionsData.onArchiveTaskMockAction,\n  },\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/task/task.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "Story<TaskComponent>",
-                "defaultValue": "(args) => ({\n  props: {\n    ...args,\n    onPinTask: actionsData.onPinTask,\n    onArchiveTask: actionsData.onArchiveTask,\n  },\n})"
+                "defaultValue": "(args) => ({\n  props: {\n    ...args,\n    onPinTaskC: actionsData.onPinTaskMockAction,\n    onArchiveTaskC: actionsData.onArchiveTaskMockAction,\n  },\n})"
             },
             {
                 "name": "WithPinnedTasks",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/task-list/task-list.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             }
@@ -901,18 +763,14 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/components/task/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\n  onPinTask: action('onPinTask'),\n  onArchiveTask: action('onArchiveTask'),\n}"
+                    "defaultValue": "{\n  onPinTaskMockAction: action('onPinTaskMockEvent'),\n  onArchiveTaskMockAction: action('onArchiveTaskMockEvent'),\n}"
                 },
                 {
                     "name": "Archived",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/components/task/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -921,8 +779,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/components/task/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -931,8 +787,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/components/task/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -941,10 +795,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/components/task/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "Story<TaskComponent>",
-                    "defaultValue": "(args) => ({\n  props: {\n    ...args,\n    onPinTask: actionsData.onPinTask,\n    onArchiveTask: actionsData.onArchiveTask,\n  },\n})"
+                    "defaultValue": "(args) => ({\n  props: {\n    ...args,\n    onPinTaskC: actionsData.onPinTaskMockAction,\n    onArchiveTaskC: actionsData.onArchiveTaskMockAction,\n  },\n})"
                 }
             ],
             "src/app/components/task-list/task-list.stories.ts": [
@@ -953,8 +805,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/components/task-list/task-list.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -963,8 +813,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/components/task-list/task-list.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -973,8 +821,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/components/task-list/task-list.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -983,32 +829,16 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/components/task-list/task-list.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "Story<TaskListComponent>",
-                    "defaultValue": "(args) => ({\n  props: {\n    ...args,\n    onPinTask: TaskStories.actionsData.onPinTask,\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\n  },\n})"
+                    "defaultValue": "(args) => ({\n  props: {\n    ...args,\n    onPinTaskP: TaskStories.actionsData.onPinTaskMockAction,\n    onArchiveTaskP: TaskStories.actionsData.onArchiveTaskMockAction,\n  },\n})"
                 },
                 {
                     "name": "WithPinnedTasks",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/components/task-list/task-list.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
-                }
-            ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -1017,10 +847,18 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/environments/environment.prod.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -1029,8 +867,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -1039,8 +875,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -1049,8 +883,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -1059,8 +891,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -1069,8 +899,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "Story<Button>",
                     "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
                 }
@@ -1081,8 +909,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -1091,8 +917,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -1101,8 +925,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "Story<Header>",
                     "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
                 }
@@ -1113,8 +935,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -1123,8 +943,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -1133,8 +951,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "Story<Page>",
                     "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
                 }
@@ -1145,8 +961,6 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/jest-config/__mocks__/globalMocks.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "() => {\n    let storage = {};\n    return {\n      getItem: key => (key in storage ? storage[key] : null),\n      setItem: (key, value) => (storage[key] = value || ''),\n      removeItem: key => delete storage[key],\n      clear: () => (storage = {}),\n    };\n  }"
                 }
@@ -1158,7 +972,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 6,
+        "count": 5,
         "status": "low",
         "files": [
             {
@@ -1175,9 +989,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "TaskListComponent",
-                "coveragePercent": 80,
-                "coverageCount": "4/5",
-                "status": "very-good"
+                "coveragePercent": 66,
+                "coverageCount": "4/6",
+                "status": "good"
             },
             {
                 "filePath": "src/app/components/task-list/task-list.stories.ts",
