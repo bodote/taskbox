@@ -1,73 +1,65 @@
-import {
-  moduleMetadata,
-  Story,
-  Meta,
-  componentWrapperDecorator,
-} from '@storybook/angular';
+import { moduleMetadata, Story, Meta, componentWrapperDecorator } from '@storybook/angular'
 
-import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common'
 
-import { PureTaskListComponent } from './pure-task-list.component';
-import { TaskComponent } from '../task/task.component';
+import { PureTaskListComponent } from './pure-task-list.component'
+import { TaskComponent } from '../task/task.component'
 
-import * as TaskStories from '../task/task.stories';
+import * as TaskStories from '../task/task.stories'
 
 export default {
-  component: PureTaskListComponent,
-  decorators: [
-    moduleMetadata({
-      // 👇 Imports both components to allow component composition with Storybook
-      declarations: [PureTaskListComponent, TaskComponent],
-      imports: [CommonModule],
-    }),
-    // 👇 Wraps our stories with a decorator
-    componentWrapperDecorator(
-      (story) => `<div style=" margin: 1em">${story}</div>`
-    ),
-  ],
-  title: 'TaskList',
-} as Meta;
+    component: PureTaskListComponent,
+    decorators: [
+        moduleMetadata({
+            // 👇 Imports both components to allow component composition with Storybook
+            declarations: [PureTaskListComponent, TaskComponent],
+            imports: [CommonModule],
+        }),
+        // 👇 Wraps our stories with a decorator
+        componentWrapperDecorator(
+            (story) => `<h3>Press D to show Actions and Controls Panel</h3><div style=" margin: 1em">${story}</div>`
+        ),
+    ],
+    title: 'TaskList',
+} as Meta
 
 const Template: Story<PureTaskListComponent> = (args) => ({
-  props: {
-    ...args,
-    onPinTaskP: TaskStories.actionsData.onPinTaskMockAction,
-    onArchiveTaskP: TaskStories.actionsData.onArchiveTaskMockAction,
-  },
-});
+    props: {
+        ...args,
+        onPinTaskP: TaskStories.actionsData.onPinTaskMockAction,
+        onArchiveTaskP: TaskStories.actionsData.onArchiveTaskMockAction,
+    },
+})
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
-  tasks: [
-    { ...TaskStories.Default.args.task, id: '1', title: 'Task 1' },
-    { ...TaskStories.Default.args.task, id: '2', title: 'Task 2' },
-    { ...TaskStories.Default.args.task, id: '3', title: 'Task 3' },
-    { ...TaskStories.Default.args.task, id: '4', title: 'Task 4' },
-    { ...TaskStories.Default.args.task, id: '5', title: 'Task 5' },
-    { ...TaskStories.Default.args.task, id: '6', title: 'Task 6' },
-  ],
-};
+    tasks: [
+        { ...TaskStories.Default.args.task, id: '1', title: 'Task 1' },
+        { ...TaskStories.Default.args.task, id: '2', title: 'Task 2' },
+        { ...TaskStories.Default.args.task, id: '3', title: 'Task 3' },
+        { ...TaskStories.Default.args.task, id: '4', title: 'Task 4' },
+        { ...TaskStories.Default.args.task, id: '5', title: 'Task 5' },
+        { ...TaskStories.Default.args.task, id: '6', title: 'Task 6' },
+    ],
+}
 
-export const WithPinnedTasks = Template.bind({});
+export const WithPinnedTasks = Template.bind({})
 WithPinnedTasks.args = {
-  // Shaping the stories through args composition.
-  // Inherited data coming from the Default story.
-  tasks: [
-    ...Default.args.tasks.slice(0, 5),
-    { id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },
-  ],
-};
+    // Shaping the stories through args composition.
+    // Inherited data coming from the Default story.
+    tasks: [...Default.args.tasks.slice(0, 5), { id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' }],
+}
 
-export const Loading = Template.bind({});
+export const Loading = Template.bind({})
 Loading.args = {
-  tasks: [],
-  loading: true,
-};
+    tasks: [],
+    loading: true,
+}
 
-export const Empty = Template.bind({});
+export const Empty = Template.bind({})
 Empty.args = {
-  // Shaping the stories through args composition.
-  // Inherited data coming from the Loading story.
-  ...Loading.args,
-  loading: false,
-};
+    // Shaping the stories through args composition.
+    // Inherited data coming from the Loading story.
+    ...Loading.args,
+    loading: false,
+}
