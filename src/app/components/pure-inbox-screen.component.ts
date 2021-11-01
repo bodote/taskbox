@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-pure-inbox-screen',
@@ -22,5 +22,5 @@ import { Component, Input } from '@angular/core'
     `,
 })
 export class PureInboxScreenComponent {
-    @Input() error: boolean
+    @Input() error: boolean;
 }

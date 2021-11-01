@@ -1,13 +1,13 @@
-import { moduleMetadata, Story, Meta, componentWrapperDecorator } from '@storybook/angular'
+import { moduleMetadata, Story, Meta, componentWrapperDecorator } from '@storybook/angular';
 
-import { CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common';
 
-import { PureInboxScreenComponent } from './pure-inbox-screen.component'
+import { PureInboxScreenComponent } from './pure-inbox-screen.component';
 
-import { TaskModule } from './task.module'
+import { TaskModule } from './task.module';
 
-import { Store, NgxsModule } from '@ngxs/store'
-import { TasksState } from '../state/task.state'
+import { Store, NgxsModule } from '@ngxs/store';
+import { TasksState } from '../state/task.state';
 
 export default {
     component: PureInboxScreenComponent,
@@ -22,17 +22,17 @@ export default {
         ),
     ],
     title: 'PureInboxScreen',
-} as Meta
+} as Meta;
 
 const Template: Story<PureInboxScreenComponent> = (args) => ({
     props: args,
-})
+});
 
-export const Default = Template.bind({})
+export const Default = Template.bind({});
 Default.args = {
     error: true,
-}
-export const Error = Template.bind({})
+};
+export const Error = Template.bind({});
 Error.args = {
     error: false,
-}
+};

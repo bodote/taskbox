@@ -5,31 +5,31 @@ import { Task } from '../../models/task.model';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-task-list',
-  template: `
-    <app-pure-task-list
-      [tasks]="tasks$ | async"
-      (onArchiveTaskP)="archiveTask($event)"
-      (onPinTaskP)="pinTask($event)"
-    ></app-pure-task-list>
-  `,
+    selector: 'app-task-list',
+    template: `
+        <app-pure-task-list
+            [tasks]="tasks$ | async"
+            (onArchiveTaskP)="archiveTask($event)"
+            (onPinTaskP)="pinTask($event)"
+        ></app-pure-task-list>
+    `,
 })
 export class TaskListComponent {
-  @Select(TasksState.getAllTasks) tasks$: Observable<Task[]>;
+    @Select(TasksState.getAllTasks) tasks$: Observable<Task[]>;
 
-  constructor(private store: Store) {}
+    constructor(private store: Store) {}
 
-  /**
-   * Component method to trigger the archiveTask event
-   */
-  archiveTask(event: any) {
-    this.store.dispatch(new ArchiveTask(event));
-  }
+    /**
+     * Component method to trigger the archiveTask event
+     */
+    archiveTask(event: any) {
+        this.store.dispatch(new ArchiveTask(event));
+    }
 
-  /**
-   * Component method to trigger the pinTask event
-   */
-  pinTask(id: any) {
-    this.store.dispatch(new PinTask(id));
-  }
+    /**
+     * Component method to trigger the pinTask event
+     */
+    pinTask(id: any) {
+        this.store.dispatch(new PinTask(id));
+    }
 }
