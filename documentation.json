@@ -1207,7 +1207,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/task-list/pure-task-list.stories.ts",
+                "file": "src/app/components/task/task.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1215,7 +1215,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/task/task.stories.ts",
+                "file": "src/app/components/task-list/pure-task-list.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1351,17 +1351,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
+                "file": "src/stories/Button.stories.ts",
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
+                "file": "src/stories/Header.stories.ts",
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1377,15 +1377,7 @@
                 "subtype": "variable",
                 "file": "src/app/components/pure-inbox-screen.stories.ts",
                 "type": "Story<PureInboxScreenComponent>",
-                "defaultValue": "(args) => ({\n    props: {\n        ...args,\n    },\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/task-list/pure-task-list.stories.ts",
-                "type": "Story<PureTaskListComponent>",
-                "defaultValue": "(args) => ({\n    props: {\n        ...args,\n        onPinTaskP: TaskStories.actionsData.onPinTaskMockAction,\n        onArchiveTaskP: TaskStories.actionsData.onArchiveTaskMockAction,\n    },\n})"
+                "defaultValue": "(args) => ({\n    props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1394,6 +1386,14 @@
                 "file": "src/app/components/task/task.stories.ts",
                 "type": "Story<TaskComponent>",
                 "defaultValue": "(args) => ({\n    props: {\n        ...args,\n        onPinTaskC: actionsData.onPinTaskMockAction,\n        onArchiveTaskC: actionsData.onArchiveTaskMockAction,\n    },\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/task-list/pure-task-list.stories.ts",
+                "type": "Story<PureTaskListComponent>",
+                "defaultValue": "(args) => ({\n    props: {\n        ...args,\n        onPinTaskP: TaskStories.actionsData.onPinTaskMockAction,\n        onArchiveTaskP: TaskStories.actionsData.onArchiveTaskMockAction,\n    },\n})"
             },
             {
                 "name": "tstates",
@@ -1507,7 +1507,7 @@
                     "subtype": "variable",
                     "file": "src/app/components/pure-inbox-screen.stories.ts",
                     "type": "Story<PureInboxScreenComponent>",
-                    "defaultValue": "(args) => ({\n    props: {\n        ...args,\n    },\n})"
+                    "defaultValue": "(args) => ({\n    props: args,\n})"
                 }
             ],
             "src/app/components/task-list/pure-task-list.stories.ts": [
