@@ -611,7 +611,7 @@
         },
         {
             "name": "InboxScreenComponent",
-            "id": "component-InboxScreenComponent-368a369bc398a719aa71657e3e248e9d",
+            "id": "component-InboxScreenComponent-a7f9e6137dd1049c45cc71f7ec3a8c71",
             "file": "src/app/components/inbox-screen.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -649,7 +649,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core'\nimport { Select } from '@ngxs/store'\nimport { TasksState } from '../state/task.state'\nimport { Observable } from 'rxjs'\n\n@Component({\n    selector: 'app-inbox-screen',\n    template: `\n        <div><h4>app-inbox-screen</h4></div>\n        <app-pure-inbox-screen [error]=\"error$ | async\"></app-pure-inbox-screen>\n    `,\n    styles: [\n        `\n            h4 {\n                font-weight: normal;\n                padding: 20px;\n                background-color: white;\n            }\n        `,\n    ],\n})\nexport class InboxScreenComponent {\n    @Select(TasksState.getError) error$: Observable<boolean>\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { Select } from '@ngxs/store';\nimport { TasksState } from '../state/task.state';\nimport { Observable } from 'rxjs';\n\n@Component({\n    selector: 'app-inbox-screen',\n    template: `\n        <div><h4>app-inbox-screen</h4></div>\n        <app-pure-inbox-screen [error]=\"error$ | async\"></app-pure-inbox-screen>\n    `,\n    styles: [\n        `\n            h4 {\n                font-weight: normal;\n                padding: 20px;\n                background-color: white;\n            }\n        `,\n    ],\n})\nexport class InboxScreenComponent {\n    @Select(TasksState.getError) error$: Observable<boolean>;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n            h4 {\n                font-weight: normal;\n                padding: 20px;\n                background-color: white;\n            }\n        \n"
@@ -718,7 +718,7 @@
         },
         {
             "name": "PureInboxScreenComponent",
-            "id": "component-PureInboxScreenComponent-5f3267c90617b2cd130eef73bf8920e7",
+            "id": "component-PureInboxScreenComponent-82da04177d237d882b684f90e2a7c6b6",
             "file": "src/app/components/pure-inbox-screen.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -746,7 +746,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core'\n\n@Component({\n    selector: 'app-pure-inbox-screen',\n    template: `\n        <div *ngIf=\"error\" class=\"page lists-show\">\n            <div class=\"wrapper-message\">\n                <span class=\"icon-face-sad\"></span>\n                <div class=\"title-message\">Oh no!</div>\n                <div class=\"subtitle-message\">Something went wrong</div>\n            </div>\n        </div>\n\n        <div *ngIf=\"!error\" class=\"page lists-show\">\n            <nav>\n                <h1 class=\"title-page\">\n                    <span class=\"title-wrapper\">Taskbox</span>\n                </h1>\n            </nav>\n            <app-task-list></app-task-list>\n        </div>\n    `,\n})\nexport class PureInboxScreenComponent {\n    @Input() error: boolean\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    selector: 'app-pure-inbox-screen',\n    template: `\n        <div *ngIf=\"error\" class=\"page lists-show\">\n            <div class=\"wrapper-message\">\n                <span class=\"icon-face-sad\"></span>\n                <div class=\"title-message\">Oh no!</div>\n                <div class=\"subtitle-message\">Something went wrong</div>\n            </div>\n        </div>\n\n        <div *ngIf=\"!error\" class=\"page lists-show\">\n            <nav>\n                <h1 class=\"title-page\">\n                    <span class=\"title-wrapper\">Taskbox</span>\n                </h1>\n            </nav>\n            <app-task-list></app-task-list>\n        </div>\n    `,\n})\nexport class PureInboxScreenComponent {\n    @Input() error: boolean;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": ""
@@ -965,7 +965,7 @@
         },
         {
             "name": "TaskListComponent",
-            "id": "component-TaskListComponent-2114f16efcba470472126246b31c8f46",
+            "id": "component-TaskListComponent-6da2b1ca76a449cd0c5979adbb4faab6",
             "file": "src/app/components/task-list/task-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -975,7 +975,7 @@
             "selector": "app-task-list",
             "styleUrls": [],
             "styles": [],
-            "template": "<app-pure-task-list\n  [tasks]=\"tasks$ | async\"\n  (onArchiveTaskP)=\"archiveTask($event)\"\n  (onPinTaskP)=\"pinTask($event)\"\n></app-pure-task-list>\n",
+            "template": "<app-pure-task-list\n    [tasks]=\"tasks$ | async\"\n    (onArchiveTaskP)=\"archiveTask($event)\"\n    (onPinTaskP)=\"pinTask($event)\"\n></app-pure-task-list>\n",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [],
@@ -1048,7 +1048,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { Select, Store } from '@ngxs/store';\nimport { TasksState, ArchiveTask, PinTask } from '../../state/task.state';\nimport { Task } from '../../models/task.model';\nimport { Observable } from 'rxjs';\n\n@Component({\n  selector: 'app-task-list',\n  template: `\n    <app-pure-task-list\n      [tasks]=\"tasks$ | async\"\n      (onArchiveTaskP)=\"archiveTask($event)\"\n      (onPinTaskP)=\"pinTask($event)\"\n    ></app-pure-task-list>\n  `,\n})\nexport class TaskListComponent {\n  @Select(TasksState.getAllTasks) tasks$: Observable<Task[]>;\n\n  constructor(private store: Store) {}\n\n  /**\n   * Component method to trigger the archiveTask event\n   */\n  archiveTask(event: any) {\n    this.store.dispatch(new ArchiveTask(event));\n  }\n\n  /**\n   * Component method to trigger the pinTask event\n   */\n  pinTask(id: any) {\n    this.store.dispatch(new PinTask(id));\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { Select, Store } from '@ngxs/store';\nimport { TasksState, ArchiveTask, PinTask } from '../../state/task.state';\nimport { Task } from '../../models/task.model';\nimport { Observable } from 'rxjs';\n\n@Component({\n    selector: 'app-task-list',\n    template: `\n        <app-pure-task-list\n            [tasks]=\"tasks$ | async\"\n            (onArchiveTaskP)=\"archiveTask($event)\"\n            (onPinTaskP)=\"pinTask($event)\"\n        ></app-pure-task-list>\n    `,\n})\nexport class TaskListComponent {\n    @Select(TasksState.getAllTasks) tasks$: Observable<Task[]>;\n\n    constructor(private store: Store) {}\n\n    /**\n     * Component method to trigger the archiveTask event\n     */\n    archiveTask(event: any) {\n        this.store.dispatch(new ArchiveTask(event));\n    }\n\n    /**\n     * Component method to trigger the pinTask event\n     */\n    pinTask(id: any) {\n        this.store.dispatch(new PinTask(id));\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1185,7 +1185,7 @@
                 "subtype": "variable",
                 "file": "src/app/components/task/task.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n    onPinTaskMockAction: action('onPinTaskMockEvent'),\n    onArchiveTaskMockAction: action('onArchiveTaskMockEvent'),\n}"
+                "defaultValue": "{\n  onPinTaskMockAction: action('onPinTaskMockEvent'),\n  onArchiveTaskMockAction: action('onArchiveTaskMockEvent'),\n}"
             },
             {
                 "name": "Archived",
@@ -1207,7 +1207,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/task/task.stories.ts",
+                "file": "src/app/components/task-list/pure-task-list.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1215,7 +1215,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/task-list/pure-task-list.stories.ts",
+                "file": "src/app/components/task/task.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1351,17 +1351,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
+                "file": "src/stories/Header.stories.ts",
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
+                "file": "src/stories/Button.stories.ts",
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1377,15 +1377,7 @@
                 "subtype": "variable",
                 "file": "src/app/components/pure-inbox-screen.stories.ts",
                 "type": "Story<PureInboxScreenComponent>",
-                "defaultValue": "(args) => ({\n    props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/task/task.stories.ts",
-                "type": "Story<TaskComponent>",
-                "defaultValue": "(args) => ({\n    props: {\n        ...args,\n        onPinTaskC: actionsData.onPinTaskMockAction,\n        onArchiveTaskC: actionsData.onArchiveTaskMockAction,\n    },\n})"
+                "defaultValue": "(args) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1394,6 +1386,14 @@
                 "file": "src/app/components/task-list/pure-task-list.stories.ts",
                 "type": "Story<PureTaskListComponent>",
                 "defaultValue": "(args) => ({\n    props: {\n        ...args,\n        onPinTaskP: TaskStories.actionsData.onPinTaskMockAction,\n        onArchiveTaskP: TaskStories.actionsData.onArchiveTaskMockAction,\n    },\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/task/task.stories.ts",
+                "type": "Story<TaskComponent>",
+                "defaultValue": "(args) => ({\n  props: {\n    ...args,\n    onPinTaskC: actionsData.onPinTaskMockAction,\n    onArchiveTaskC: actionsData.onArchiveTaskMockAction,\n  },\n})"
             },
             {
                 "name": "tstates",
@@ -1449,7 +1449,7 @@
                     "subtype": "variable",
                     "file": "src/app/components/task/task.stories.ts",
                     "type": "object",
-                    "defaultValue": "{\n    onPinTaskMockAction: action('onPinTaskMockEvent'),\n    onArchiveTaskMockAction: action('onArchiveTaskMockEvent'),\n}"
+                    "defaultValue": "{\n  onPinTaskMockAction: action('onPinTaskMockEvent'),\n  onArchiveTaskMockAction: action('onArchiveTaskMockEvent'),\n}"
                 },
                 {
                     "name": "Archived",
@@ -1481,7 +1481,7 @@
                     "subtype": "variable",
                     "file": "src/app/components/task/task.stories.ts",
                     "type": "Story<TaskComponent>",
-                    "defaultValue": "(args) => ({\n    props: {\n        ...args,\n        onPinTaskC: actionsData.onPinTaskMockAction,\n        onArchiveTaskC: actionsData.onArchiveTaskMockAction,\n    },\n})"
+                    "defaultValue": "(args) => ({\n  props: {\n    ...args,\n    onPinTaskC: actionsData.onPinTaskMockAction,\n    onArchiveTaskC: actionsData.onArchiveTaskMockAction,\n  },\n})"
                 }
             ],
             "src/app/components/pure-inbox-screen.stories.ts": [
@@ -1507,7 +1507,7 @@
                     "subtype": "variable",
                     "file": "src/app/components/pure-inbox-screen.stories.ts",
                     "type": "Story<PureInboxScreenComponent>",
-                    "defaultValue": "(args) => ({\n    props: args,\n})"
+                    "defaultValue": "(args) => ({\n  props: args,\n})"
                 }
             ],
             "src/app/components/task-list/pure-task-list.stories.ts": [
