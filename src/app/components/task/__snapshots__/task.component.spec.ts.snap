@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskComponent should render  1`] = `
+<app-task
+  __ngContext__={[Function LRootView]}
+  onArchiveTaskC={[Function EventEmitter_]}
+  onPinTaskC={[Function EventEmitter_]}
+>
+  <div
+    class="list-item"
+  >
+    <label
+      class="checkbox"
+    >
+      <input
+        disabled="true"
+        name="checked"
+        type="checkbox"
+      />
+      <span
+        class="checkbox-custom"
+      />
+    </label>
+    <div
+      class="title"
+    >
+      <input
+        placeholder="Input title"
+        readonly="true"
+        style="text-overflow: ellipsis;"
+        type="text"
+      />
+    </div>
+    <div
+      class="actions"
+    >
+      <a>
+        <span
+          class="icon-star"
+        />
+      </a>
+      
+    </div>
+  </div>
+</app-task>
+`;
